@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-linear {
+  background: linear-gradient(155.41deg, #07D9D3 42%, #0F5BA4 62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-half-square {
+  position: relative;
+  /* set position to relative to allow absolute positioning of the pseudo-element */
+}
+
+.bg-half-square::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgb(0, 0, 0.3)), url('./assets/bg-image.jpg');
+  background-size: contain;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 26%, 0 47%);
+  z-index: -1;
+  filter: brightness(60%);
+  
+}
+
+
+.bg-half-square::after{
+  content: "";
+  opacity: 35%;
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  clip-path: polygon(27% 100%, 100% 82%, 100% 100%);
+  z-index: -2;
+}
