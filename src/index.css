@@ -10,11 +10,17 @@
   text-fill-color: transparent;
 }
 
-.bg-half-square {
-  position: relative;
-  /* set position to relative to allow absolute positioning of the pseudo-element */
+.title-clamp {
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  line-height: 110%;
 }
 
+/* ===================================================== */
+/* ============ Background decorations ================= */
+/* ===================================================== */
+.bg-half-square {
+  position: relative;
+}
 
 .bg-half-square::before {
   content: "";
@@ -52,13 +58,3 @@
     clip-path: polygon(100% 100%, 100% 75%, 50% 100%);
   }
 }
-
-.title-clamp {
-  font-size: clamp(4.5rem, 10vw, 8.5rem);
-  line-height: 110%;
-}
-
-.altoDeLinea{
-  line-height: 1.5;
-}
-
