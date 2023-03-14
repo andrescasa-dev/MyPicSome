@@ -15,6 +15,7 @@
   /* set position to relative to allow absolute positioning of the pseudo-element */
 }
 
+
 .bg-half-square::before {
   content: "";
   position: absolute;
@@ -22,14 +23,21 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgb(0, 0, 0.3)), url('./assets/bg-image.jpg');
   background-size: contain;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 26%, 0 47%);
   z-index: -1;
   filter: brightness(60%);
-  
+  clip-path: polygon(0 0, 100% 0, 100% 26%, 0 47%);  
 }
 
+@media (min-width: 62em) {
+  .bg-half-square::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.6)), url('./assets/bg-image-lg.jpg');
+    clip-path: polygon(0 0, 100% 0, 100% 8%, 0 58%);
+    background-size: cover;
+    background-position: 10% 80%;
+  }
+}
 
-.bg-half-square::after{
+.bg-half-square::after {
   content: "";
   opacity: 35%;
   position: absolute;
@@ -38,3 +46,19 @@
   clip-path: polygon(27% 100%, 100% 82%, 100% 100%);
   z-index: -2;
 }
+
+@media (min-width: 62em) {
+  .bg-half-square::after {
+    clip-path: polygon(100% 100%, 100% 75%, 50% 100%);
+  }
+}
+
+.title-clamp {
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  line-height: 110%;
+}
+
+.altoDeLinea{
+  line-height: 1.5;
+}
+
